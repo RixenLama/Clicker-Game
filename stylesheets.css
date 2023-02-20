@@ -29,7 +29,8 @@ h3{
 }
 .score-container{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 img{
@@ -39,4 +40,12 @@ img{
 
 img:hover{
     zoom: 130%;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    text-decoration: underline;
 }
