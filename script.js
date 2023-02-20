@@ -1,6 +1,11 @@
 
 var score = 0
 
+
+window.onload = function(){
+    loadGame();
+}
+
 function addScore(amount){
     score = score + amount;
     document.getElementById("score").innerHTML = score;
@@ -20,8 +25,4 @@ setInterval (function (){
 function loadGame(){
     var savedGame = JSON.parse(localStorage.getItem("gameSave"));
     if (typeof savedGame.score !== "undefined") score = savedGame.score;
-}
-
-window.onload = function(){
-    loadGame();
 }
