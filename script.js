@@ -25,4 +25,5 @@ setInterval (function (){
 function loadGame(){
     var savedGame = JSON.parse(localStorage.getItem("gameSave"));
     if (typeof savedGame.score !== "undefined") score = savedGame.score;
+    document.getElementById("score").innerHTML = score;
 }
