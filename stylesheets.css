@@ -37,6 +37,9 @@ h3{
 img{
     max-width: 300px;
     max-height: 300px;
+    animation: catAnimation infinite linear;
+    animation-duration: 2s;
+    animation-delay: 0s;
 }
 
 img:hover{
@@ -49,4 +52,13 @@ a{
 
 a:hover{
     text-decoration: underline;
+}
+
+@keyframes catAnimation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }

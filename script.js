@@ -1,9 +1,13 @@
 
-var score = 0
 
+var score = 0
+var cats = 0
 
 window.onload = function(){
     loadGame();
+    if (cats >= 1) {
+        catAbility();
+    }
 }
 
 function addScore(amount){
@@ -13,7 +17,8 @@ function addScore(amount){
 
 function saveGame(){
     var gameSave = {
-        score : score
+        score : score,
+        cats : cats
     };
     localStorage.setItem("gameSave", JSON.stringify(gameSave));
 }
@@ -31,8 +36,9 @@ function loadGame(){
 function buyCat(){
     if (score >= 15) {
         score = score - 15;
+        cats = cats + 1;
         document.getElementById("score").innerHTML = score;
-        setInterval (catAbility, 1000)
+        setInterval (catAbility, 1000)  
     } else {
         window.alert("Not enough points");s
     }
