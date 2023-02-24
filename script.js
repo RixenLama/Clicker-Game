@@ -1,13 +1,8 @@
-
-
 var score = 0
 var cats = 0
 
 window.onload = function(){
     loadGame();
-    if (cats >= 1) {
-        catAbility();
-    }
 }
 
 function addScore(amount){
@@ -31,6 +26,7 @@ function loadGame(){
     var savedGame = JSON.parse(localStorage.getItem("gameSave"));
     if (typeof savedGame.score !== "undefined") score = savedGame.score;
     document.getElementById("score").innerHTML = score;
+    if (typeof savedGame.cats !== "undefined") cats = savedGame.cats
 }
 
 function buyCat(){
@@ -38,13 +34,16 @@ function buyCat(){
         score = score - 15;
         cats = cats + 1;
         document.getElementById("score").innerHTML = score;
-        setInterval (catAbility, 1000)  
     } else {
         window.alert("Not enough points");s
     }
 }
 
+setInterval (catAbility, 1000)  
+
 function catAbility(){
-    score = score + 2;
+    if (cats >= 1){
+    score = score + 2 * cats;
     document.getElementById("score").innerHTML = score;
+    }
 }
