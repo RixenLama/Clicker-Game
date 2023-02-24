@@ -20,7 +20,7 @@ function saveGame(){
 
 setInterval (function (){
     saveGame();
-}, 20000)
+}, 2000)
 
 function loadGame(){
     var savedGame = JSON.parse(localStorage.getItem("gameSave"));
