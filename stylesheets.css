@@ -8,6 +8,9 @@
 
 body{
     background-color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1{
@@ -61,4 +64,16 @@ a:hover{
     to{
         transform: rotate(360deg);
     }
+}
+
+.footer{
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.footer-text{
+    color: white;
+    font-size: x-small;
 }
