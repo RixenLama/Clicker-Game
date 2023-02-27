@@ -1,5 +1,6 @@
 var score = 0
 var cats = 0
+var catPrice = 15
 
 window.onload = function(){
     loadGame();
@@ -27,11 +28,13 @@ function loadGame(){
     if (typeof savedGame.score !== "undefined") score = savedGame.score;
     document.getElementById("score").innerHTML = score;
     if (typeof savedGame.cats !== "undefined") cats = savedGame.cats
+    if (typeof savedGame.catPrice !== "undefined") catPrice = savedGame.catPrice
 }
 
 function buyCat(){
     if (score >= 15) {
-        score = score - 15;
+        score = score - catPrice;
+        catPrice = catPrice * 1.2; 
         cats = cats + 1;
         document.getElementById("score").innerHTML = score;
     } else {
