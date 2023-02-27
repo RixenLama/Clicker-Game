@@ -32,7 +32,7 @@ function loadGame(){
 }
 
 function buyCat(){
-    if (score >= 15) {
+    if (score >= catPrice) {
         score = score - catPrice;
         catPrice = catPrice * 1.2; 
         cats = cats + 1;
