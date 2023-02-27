@@ -34,7 +34,7 @@ function loadGame(){
 function buyCat(){
     if (score >= catPrice) {
         score = score - catPrice;
-        catPrice = catPrice * 1.2; 
+        catPrice = catPrice * 1.15; 
         cats = cats + 1;
         document.getElementById("score").innerHTML = score;
     } else {
